@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            height: 10rem;
+            width: 18rem;
+            background: linear-gradient(to right, blue, violet, pink);
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 50%);
+        }
+
+        .clock {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 27%;
+            left: 13%;
+            
+
+        }
+        span{
+            font-size: 61px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="clock">
+            <span id="hrs">00</span>
+            <span>:</span>
+            <span id="min">00</span>
+            <span>:</span>
+            <span id="sec">00</span>
+        </div>
+    </div>
+
+
+    <script>
+        const hrs=document.getElementById('hrs');
+        const min=document.getElementById('min');
+        const sec=document.getElementById('sec');
+        const currentTime=new Date();
+
+
+        setInterval(()=>{
+           
+        hrs.textContent=currentTime.getHours();
+        min.textContent=currentTime.getMinutes();
+        sec.textContent=currentTime.getSeconds();
+        },1000)
+        
+    </script>
+</body>
+
+</html>

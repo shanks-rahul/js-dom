@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .visibility{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 id="heading">image is visible</h1>
+        <button id="btn">toggle image</button><br>
+        <img id="photo" class="" src="Avatar2.png" alt="">
+    </div>
+
+
+    <script>
+        const heading = document.getElementById('heading');
+        const button=document.getElementById('btn')
+        const image=document.getElementById('photo');
+
+        button.addEventListener('click',()=>{
+            image.classList.toggle('visibility');
+            if(image.className=='visibility'){
+                heading.textContent='Image is Hidden';
+
+            }
+            else{
+                heading.textContent='Image is Visible';
+            }
+        })
+
+    </script>
+</body>
+</html>

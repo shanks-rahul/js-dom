@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            height: 7rem;
+            text-align: center;
+            padding: 6px;
+        }
+        .dark-mode{
+            
+            border: 1px solid white;
+        }
+        .light{
+            color: black;
+        }
+        .dark{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="heading" class="light">this is light mode</h1>
+        <button id="btn" class="light-mode">toggle theme</button>
+    </div>
+
+    <script>
+        button=document.getElementById('btn')
+        text=document.getElementById('heading')
+        button.addEventListener('click',()=>{
+            if(text.className=='light'){
+                text.className='dark';
+                text.textContent='this is dark mode'
+                document.body.style.background='black'
+                button.className='dark-mode';
+            }
+            else{
+                text.className='light'
+                text.textContent='this is light mode'
+                document.body.style.background='white'
+                button.className='light-mode';
+            }
+
+
+        })
+    </script>
+</body>
+</html>

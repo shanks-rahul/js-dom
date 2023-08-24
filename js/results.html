@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hiddem{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <label for="">search :</label>
+        <input class="inp" type="text">
+    </div>
+    <div>
+        Results:<br>
+        <ul>
+            <li class="list" id="item1">HTML</li>
+            <li class="list" id="item2">Javascript</li>
+            <li class="list" id="item3">CSS</li>
+            <li class="list" id="item4">Tailwind CSS</li>
+            <li class="list" id="item5">React</li>
+        </ul>
+    </div>
+
+    <script>
+        document.querySelector('.inp').addEventListener('input',filterlist)
+        // const field=search.value.toLowerCase();
+        
+        // const list=document.querySelectorAll('.list')
+
+        function filterlist(){
+        const search = document.querySelector('.inp') 
+        const field=search.value.toLowerCase();
+        
+        const list=document.querySelectorAll('.list')
+        list.forEach((items)=>{
+            let text=items.textContent;
+            if(text.toLowerCase().includes(field.toLowerCase())){
+                items.style.display=''
+            }
+            else{
+                items.style.display='none'
+            }
+
+        })
+        }
+        
+
+
+
+
+        
+    </script>
+
+</body>
+</html>
